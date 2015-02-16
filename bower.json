@@ -1,0 +1,11 @@
+{
+  "name": "less-space",
+  "version": "1.0.0",
+  "description": "Responsive CSS position classes",
+  "ignore": [
+    ".editorconfig",
+    ".gitignore"
+  ],
+  "main": "dist/less-space.css",
+  "dependencies": {}
+}
