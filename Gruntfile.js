@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // 1. All configuration goes here
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    banner: '\/** \n  LESS-SPACE \n \n  less-space is a responsive css positioning classses independent of Bootstrap built with Less \n  github url: http:\/\/www.proje.com \n  Author: \n    Ömer Aslanbakan \n    http:\/\/twitter.com\/Eomerx \n    http:\/\/aslanbakan.com \n    omer@aslanbakan.com \n *\/',
+    banner: '\/** \n  LESS-SPACE \n \n  less-space is a responsive css positioning classses independent of Bootstrap built with Less \n  github url: http:\/\/https://github.com/Eomerx/less-space \n  Author: \n    Ömer Aslanbakan \n    http:\/\/twitter.com\/Eomerx \n    http:\/\/aslanbakan.com \n    omer@aslanbakan.com \n *\/',
 
 
 
