@@ -1,6 +1,6 @@
 # LESS SPACE
 
-Responsive CSS Positioning classes built with LESS compatible with Bootstrap.
+Responsive CSS Spacing (Margin and Padding) classes built with LESS compatible with / without Bootstrap.
 
 ## Download
 
@@ -21,18 +21,18 @@ Add ``` less-space.css``` or ``` less-space.min.css ``` to your html.
 
 ---
 ### Changing responsive breakpoints
-First, you must install **npm** dependecies
+First, you must install **npm** dependencies
 ```
 npm install
 ```
-Then, compile with **Grunt**
+Then, compile stylesheets with **Grunt**
 ```
 grunt
 ```
 ---
 
 ###Example Usage
-This code block means; holder class has **margin-top: 20px** for medium and large screens (above 768px width),
+This code block means; holder class has **margin-top: 20px** for medium and large screens (above 768px width default),
 
 and **margin-top: 40px** for extra small and small screens (up to 768px width)
 
@@ -40,7 +40,7 @@ and **margin-top: 40px** for extra small and small screens (up to 768px width)
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
-      <div class="holder md-mt-20 xs-mt-40">
+      <div class="holder xs-mt-40 md-mt-20 ">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel nemo facere veritatis molestias harum eveniet, eius modi?
         </p>
@@ -53,7 +53,7 @@ and **margin-top: 40px** for extra small and small screens (up to 768px width)
 ### Using with Bootstrap
 copy **src/less-space.less** file to your **Bootstrap** less folder.
 
-Then, import it in **boostrap.less** after ``` variables.less ```
+Then, import it in **boostrap.less** anywhere after ``` variables.less ```
 
 ```
 @import "less-space.less";
