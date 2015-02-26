@@ -1,6 +1,8 @@
 # LESS SPACE
 
 Responsive CSS Spacing (Margin and Padding) classes built with LESS compatible with / without Bootstrap.
+It's 13kb minified and 1.3kb gzipped.
+
 
 ## Download
 
@@ -59,7 +61,6 @@ Then, import it in **boostrap.less** anywhere after ``` variables.less ```
 @import "less-space.less";
 ```
 
----
 Comment out this lines, to get already defined variables from boostrap's ``` variables.less ```
 
 ```
@@ -75,7 +76,9 @@ Comment out this lines, to get already defined variables from boostrap's ``` var
 ```
 
 ---
+[Demo from CodePen](ttp://codepen.io/Aslanbakan/full/QwxjRP/)
 
+---
 
 ## Version 1.0.0
 1. First init
@@ -83,4 +86,5 @@ Comment out this lines, to get already defined variables from boostrap's ``` var
 
 ## License
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
+
 
