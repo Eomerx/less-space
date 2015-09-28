@@ -1,6 +1,6 @@
 # LESS SPACE
 
-Responsive CSS Spacing (Margin and Padding) classes built with LESS compatible with / without Bootstrap.
+Responsive CSS Spacing (Margin and Padding) classes built with LESS  & SASS compatible with / without Bootstrap.
 It's 13kb minified and 1.3kb gzipped.
 
 
@@ -80,8 +80,9 @@ Comment out this lines, to get already defined variables from boostrap's ``` var
 
 ---
 
-## Version 1.0.0
+## Version 1.1.0
 1. First init
+2. Added SASS support
 
 
 ## License
