@@ -91,7 +91,7 @@ module.exports = function(grunt) {
           style: 'compact' // nested, compact, compressed, expanded.
         },
         files: {
-          'dist/less-space.css': 'src/less-space.scss'
+          'dist/sass-space.css': 'src/sass-space.scss'
         }
       },
       cssmin: {
@@ -105,7 +105,7 @@ module.exports = function(grunt) {
           style: 'compressed' // nested, compact, compressed, expanded.
         },
         files: {
-          'dist/less-space.min.css': 'src/less-space.scss'
+          'dist/sass-space.min.css': 'src/sass-space.scss'
         }
       }
     },
