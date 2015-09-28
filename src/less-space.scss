@@ -1,0 +1,84 @@
+// change to false if its not imported into bootstrap
+$use-bootstrap: false;
+
+// margin and padding values array
+$space-values : (
+  5,
+  10,
+  15,
+  20,
+  30,
+  40,
+  50
+) !default;
+
+// margin and padding shorthands
+$space-prefixes : (
+  p  : padding,
+  pt : padding-top,
+  pr : padding-right,
+  pb : padding-bottom,
+  pl : padding-left,
+  m  : margin,
+  mt : margin-top,
+  mr : margin-right,
+  mb : margin-bottom,
+  ml : margin-left,
+) !default;
+
+// change these values if its not imported into bootstrap
+$grid-breakpoints-custom: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 480px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 960px,
+  // Extra large screen / wide desktop
+  xl: 1280px
+) !default;
+
+$breakpoints : $grid-breakpoints-custom;
+@if $use-bootstrap {
+  $breakpoints : $grid-breakpoints;
+}
+
+
+
+
+// main function definition
+@mixin make-space($values, $prefixes, $breakpoints) {
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    // if xs value = 0, set it global without media queries
+    @if($breakpoint-value == 0) {
+      @each $attr-short, $attr-long in $prefixes {
+        @each $value in $values {
+          .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+            #{$attr-long}: #{$value};
+          }
+        }
+      }
+    }
+    // breakpoint values that not equal to 0
+    @else {
+      @media screen and (min-width: $breakpoint-value) {
+        @each $attr-short, $attr-long in $prefixes {
+          @each $value in $values {
+            .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+              #{$attr-long}: #{$value};
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include make-space($space-values, $space-prefixes, $breakpoints);
+
+
+
+
+

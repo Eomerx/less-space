@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // 1. All configuration goes here
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    banner: '\/** \n  LESS-SPACE \n \n  less-space is a responsive css positioning classses independent of Bootstrap built with Less \n  github url: http:\/\/https://github.com/Eomerx/less-space \n  Author: \n    Ömer Aslanbakan \n    http:\/\/twitter.com\/Eomerx \n    http:\/\/aslanbakan.com \n    omer@aslanbakan.com \n *\/',
+    banner: '\/** \n  LESS-SPACE \n \n  less-space is a responsive css positioning classses independent of Bootstrap built with LESS and SASS \n  github url: http:\/\/https://github.com/Eomerx/less-space \n  Author: \n    Ömer Aslanbakan \n    http:\/\/twitter.com\/Eomerx \n    http:\/\/aslanbakan.com \n    omer@aslanbakan.com \n *\/',
 
 
 
@@ -16,9 +16,17 @@ module.exports = function(grunt) {
       grunt.loadNpmTasks('grunt-contrib-watch');
     */
     watch: {
-      stylecss: {
+      less: {
         files: ['src/less-space.less'],
-        tasks: ['default'],
+        tasks: ['less'],
+        options: {
+          spawn: true,
+          // livereload: 35729
+        }
+      },
+      sass: {
+        files: ['src/less-space.scss'],
+        tasks: ['sass'],
         options: {
           spawn: true,
           // livereload: 35729
@@ -63,6 +71,47 @@ module.exports = function(grunt) {
     },
 
 
+
+    ////////////////
+    // grunt scss //
+    ////////////////
+    /*
+    npm install grunt-contrib-sass --save-dev
+    grunt.loadNpmTasks('grunt-contrib-sass');
+     */
+    sass: {
+      css: {
+        options: {
+          sourcemap: "none",
+          precision: 5,
+          check: false,
+          lineNumbers: false,
+          update: false,
+          compass: false,
+          style: 'compact' // nested, compact, compressed, expanded.
+        },
+        files: {
+          'dist/less-space.css': 'src/less-space.scss'
+        }
+      },
+      cssmin: {
+        options: {
+          sourcemap: "none",
+          precision: 5,
+          check: false,
+          lineNumbers: false,
+          update: true,
+          compass: false,
+          style: 'compressed' // nested, compact, compressed, expanded.
+        },
+        files: {
+          'dist/less-space.min.css': 'src/less-space.scss'
+        }
+      }
+    },
+
+
+
     ////////////
     // banner //
     ////////////
@@ -87,7 +136,8 @@ module.exports = function(grunt) {
 
   // 3. Where we tell Grunt we plan to use this plug-in.
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-banner');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['less', 'usebanner']);
+  grunt.registerTask('default', ['less', 'sass', 'usebanner']);
 };
