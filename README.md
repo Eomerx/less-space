@@ -80,10 +80,10 @@ Comment out this lines, to get already defined variables from boostrap's ``` var
 
 ---
 
-## Version 1.1
+## Version 1.1.1
 1.0 First init
 
-1.1. Added SASS support
+1.1.1 Added SASS support
 
 
 ## License
