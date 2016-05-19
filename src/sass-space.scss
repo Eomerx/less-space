@@ -3,6 +3,7 @@ $use-bootstrap: false;
 
 // margin and padding values array
 $space-values : (
+  0,
   5,
   10,
   15,
@@ -56,7 +57,7 @@ $breakpoints : $grid-breakpoints-custom;
       @each $attr-short, $attr-long in $prefixes {
         @each $value in $values {
           .#{$breakpoint-name}-#{$attr-short}-#{$value} {
-            #{$attr-long}: #{$value}#{'px'};
+            #{$attr-long}: #{$value}#{'px'} !important;;
           }
         }
       }
@@ -67,7 +68,7 @@ $breakpoints : $grid-breakpoints-custom;
         @each $attr-short, $attr-long in $prefixes {
           @each $value in $values {
             .#{$breakpoint-name}-#{$attr-short}-#{$value} {
-              #{$attr-long}: #{$value}#{'px'};
+              #{$attr-long}: #{$value}#{'px'} !important;;
             }
           }
         }
